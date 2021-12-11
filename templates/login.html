@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-   <title> Signup Form  </title>
+   <title> Login Form  </title>
     <link rel="stylesheet" href="style.css">
    <style>
        *{
@@ -19,7 +19,6 @@ html,body{
   background-repeat: no-repeat;
   background-size: 100%;
 }
-
 .main_div{
   width: 365px;
   background: #fff;
@@ -127,14 +126,27 @@ form .option_div{
 .button input:hover{
   background: #0add14;
 }
-form .login_up{
+form .sign_up{
   text-align: center;
   margin-top: 25px;
 }
-.login_up a{
+.sign_up a{
   color: #0de23b;
 }
-
+form .log_in{
+  text-align: center;
+  margin-top: 25px;
+}
+.log_in a{
+  color: #0de23b;
+}
+.back{
+  text-align: center;
+  margin-top: 25px;
+}
+.back a{
+  color: #2b07f7;
+}
 form a{
   text-decoration: none;
 }
@@ -142,31 +154,22 @@ form a:hover{
   text-decoration: underline;
 }
 
-
    </style>
 </head>
 <body>
   <div class="main_div">
-    <div class="title">Sign-Up Here</div>
+    <div class="title">Login Here</div>
     <div class="social_icons">
       <a href="#"><i class="fab fa-google"></i> <span>Google</span></a>
       <a href="#"><i class="fab fa-twitter"></i><span>Twitter</span></a>
     </div>
-    <form action="#">
+    <form action="{{ url_for('userlogin') }}" method="POST">
       <div class="input_box">
-        <input type="text" placeholder="Email" required>
+        <input type="text" placeholder="Username" name="email" required>
         <div class="icon"><i class="fas fa-user"></i></div>
       </div>
       <div class="input_box">
-        <input type="text" placeholder="Contact Number" required>
-        <div class="icon"><i class="fas fa-user"></i></div>
-      </div>
-      <div class="input_box">
-        <input type="password" placeholder="Password" required>
-        <div class="icon"><i class="fas fa-lock"></i></div>
-      </div>
-      <div class="input_box">
-        <input type="password" placeholder="Confirm Password" required>
+        <input type="password" placeholder="Password" name="password" required>
         <div class="icon"><i class="fas fa-lock"></i></div>
       </div>
       <div class="option_div">
@@ -174,14 +177,22 @@ form a:hover{
           <input type="checkbox">
           <span>Remember me</span>
         </div>
+        <div class="forget_div">
+          <a href="#">Forgot password?</a>
+        </div>
       </div>
       <div class="input_box button">
-        <input type="submit" value="Sign-Up">
+        <input type="submit" value="Login">
       </div>
-      <div class="login_up">
-        Already a member! <a href="log.html">Login now</a>
+      <div class="sign_up">
+        Not a member? <a href="sign.html">Signup now</a>
       </div>
-      
+      <div class="log_in">
+        Do you have a business ? <a href="buslog.html">Login here</a>
+      </div>
+      <div class="back">
+       <a href="index.html"><b>Back</b></a>
+      </div>
     </form>
   </div>
   

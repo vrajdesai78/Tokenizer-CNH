@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+   <title> Business-Login Form  </title>
+    <link rel="stylesheet" href="style.css">
+   <style>
+       *{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+html,body{
+  display: grid;
+  height: 100vh;
+  place-items:center;
+  background: linear-gradient(135deg, rgb(229, 182, 248), rgb(19, 173, 245));
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+.main_div{
+  width: 365px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.15);
+}
+.main_div .title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 600;
+}
+.main_div .social_icons{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+form {
+  margin-top: 25px;
+}
+form .input_box{
+  height: 50px;
+  width: 100%;
+  position: relative;
+  margin-top: 15px;
+}
+.input_box input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: 1px solid lightgrey;
+  border-radius: 5px;
+  padding-left: 45px;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+.input_box input:focus{
+  border-color: #be2edd;
+}
+.input_box .icon{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+  color: grey;
+}
+form .option_div{
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+.option_div .check_box{
+  display: flex;
+  align-items: center;
+}
+.option_div span{
+  margin-left: 5px;
+  font-size: 16px;
+  color: #333;
+}
+.option_div .forget_div a{
+  font-size: 16px;
+  color: #f10861;
+}
+.button input{
+  padding-left: 0;
+  background: #0bc7f7;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s linear;
+}
+.button input:hover{
+  background: #0add14;
+}
+form .sign_up{
+  text-align: center;
+  margin-top: 25px;
+}
+.sign_up a{
+  color: #0de23b;
+}
+.back{
+  text-align: center;
+  margin-top: 25px;
+}
+.back a{
+  color: #2b07f7;
+}
+form a{
+  text-decoration: none;
+}
+form a:hover{
+  text-decoration: underline;
+}
+
+   </style>
+</head>
+<body>
+  <div class="main_div">
+    <div class="title">Business Login Here</div>
+    
+    <form action="{{url_for('b_login')}}" method="POST">
+      <div class="input_box">
+        <input type="text" placeholder="Email" name="email" required>
+        <div class="icon"><i class="fas fa-user"></i></div>
+      </div>
+      <div class="input_box">
+        <input type="password" placeholder="Password" name="password" required>
+        <div class="icon"><i class="fas fa-lock"></i></div>
+      </div>
+        <div class="forget_div">
+          <a href="#">Forgot password?</a>
+        </div>
+      </div>
+      <div class="input_box button">
+        <input type="submit" value="Login">
+      </div>
+      <div class="sign_up">
+        Not a business member? <a href="log.html">Login here</a>
+      </div>
+      <div class="back">
+        <a href="index.html"><b>Back</b></a>
+       </div>
+    </form>
+  </div>
+  
+</body>
+</html>
