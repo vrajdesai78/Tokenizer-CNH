@@ -1,0 +1,4 @@
+firebase_admin==5.1.0
+Flask==2.0.2
+Pyrebase4==4.5.0
+twilio==7.3.2
