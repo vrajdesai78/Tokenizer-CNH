@@ -1,4 +1,5 @@
 import pyrebase
+from firebase_admin import credentials, firestore, initialize_app
 
 firebaseConfig = {
   "apiKey": "AIzaSyC4eW5vu9OGGOWhcrHpL85luyukeJBXD_A",
@@ -14,4 +15,6 @@ firebase=pyrebase.initialize_app(firebaseConfig)
 auth=firebase.auth()
 
 user = auth.sign_in_with_email_and_password("helloworld1@gmail.com", "123456")
-print(auth.get_account_info(user['idToken']).get('users')[0].get('email'))
+print(auth.get_account_info(user['idToken']).get('users')[0].get('localId'))
+print(auth.get_account_info(user['idToken']))
+

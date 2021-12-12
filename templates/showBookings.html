@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body{
+    background: linear-gradient(135deg, rgb(229, 182, 248), rgb(19, 173, 245));
+    padding: 20px;
+}
+
+.shops{
+    display:flex;
+}
+
+.shops img{
+    width: 170px;
+    margin-top: 18px;
+}
+
+.shop-info{
+    margin-left: 40px;
+    margin-bottom: 13px;
+}
+
+.shop-info a{
+    color: black;
+    text-decoration: none;
+}
+
+    </style>
+</head>
+
+<body>
+    <div class="list">
+
+        {% for booking in bookings %}
+            <div class="shops">
+                <div class="shop-info">
+                    <h3>{{ booking["Place_name"] }}</h3>
+                    <p>Address: {{ booking["address"]}} </p>
+                    <p>Time: {{booking["Timing"]}}</p>
+                </div>
+            </div>
+        {% endfor %}
+        <div class="alan-btn"></div>
+        <script type="text/javascript" src="https://studio.alan.app/web/lib/alan_lib.min.js"></script>
+        <script>
+            var alanBtnInstance = alanBtn({
+                key: "6297f30a50bb211a4abfdffd7c3138202e956eca572e1d8b807a3e2338fdd0dc/stage",
+                onCommand: function (commandData) {
+                    if (commandData.command === "showBookings") {
+                        //call client code that will react on the received command
+                        window.location.href = "/show_bookings";
+                    }
+                    if(commandData.command === "goHome"){
+                    window.location.href = "/";
+                }
+                if(commandData.command === "personalCare"){
+                    window.location.href = "/places/Personal Care";
+                }
+                if(commandData.command === "healthCare"){
+                    window.location.href = "/places/Hospitals";
+                }
+                if(commandData.command === "shopping"){
+                    window.location.href = "/places/Corporates";
+                }
+                },
+                rootEl: document.getElementById("alan-btn"),
+            });
+        </script>
+    </div>
+</body>
+
+</html>
